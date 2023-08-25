@@ -91,11 +91,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # 国际化
 LANGUAGE_CODE = "en-us"  # en-us代表英文,中文为zh-hans
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_TZ = True
 
 
