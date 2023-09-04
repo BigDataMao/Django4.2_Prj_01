@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'user.apps.UserConfig',
     # 定义自己的应用
-
+    'app01.apps.App01Config',
 ]
 
 # 中间件
