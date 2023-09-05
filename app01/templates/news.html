@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联通新闻</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap5/css/bootstrap.css' %}">
+</head>
+<body>
+    <h1>联通新闻中心</h1>
+    {% for data in data_list %}
+        <li>{{ data }}</li>
+    {% endfor %}
+
+    <script src="{% static 'plugins/bootstrap5/js/bootstrap.js' %}"></script>
+    <script src="{% static 'plugins/js/jquery-3.7.1.js' %}"></script>
+</body>
+</html>

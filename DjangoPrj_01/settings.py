@@ -22,9 +22,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'user.apps.UserConfig',
     # 定义自己的应用
-    'app01.apps.App01Config',
+    "app01.apps.App01Config",
 ]
 
 # 中间件
@@ -45,7 +44,7 @@ ROOT_URLCONF = "DjangoPrj_01.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
+        "DIRS": []
         ,
         "APP_DIRS": True,
         "OPTIONS": {
@@ -64,10 +63,22 @@ WSGI_APPLICATION = "DjangoPrj_01.wsgi.application"
 
 
 # 数据库配置
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+# 数据库配置:自己的MySQL
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "django_prj_01",
+        "USER": "root",
+        "PASSWORD": "mxw19910712@MYSQL",
+        "HOST": "txy",
+        "PORT": "3306",
     }
 }
 
