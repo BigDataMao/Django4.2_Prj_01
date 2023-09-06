@@ -74,7 +74,7 @@ WSGI_APPLICATION = "DjangoPrj_01.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "django_prj_01",
+        "NAME": "django",
         "USER": "root",
         "PASSWORD": "mxw19910712@MYSQL",
         "HOST": "txy",

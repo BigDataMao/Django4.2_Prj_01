@@ -1,5 +1,6 @@
-from django.shortcuts import render
-import requests
+from django.shortcuts import render, redirect
+
+from app01 import models
 
 
 # Create your views here.
@@ -16,3 +17,34 @@ def news(request):
 
 def login(request):
     return render(request, "login.html")
+
+
+def users(request):
+    """定义用户管理网页"""
+    # 1.获取所有用户信息
+    user_list = models.Users.objects.all()
+    return render(request, "users.html", {"user_list": user_list})
+
+
+def user_delete(request):
+    """删除用户"""
+    # 1.获取要删除的用户id
+    user_id = request.GET.get("id")
+    # 2.根据id删除用户
+    models.Users.objects.filter(id=user_id).delete()
+    # 3.返回用户列表页面
+    return redirect("/users/")
+
+
+def user_add(request):
+    """添加用户"""
+    if request.method == "GET":
+        return render(request, "user_add.html")
+    # 1.获取用户提交的数据
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+    email = request.POST.get("email")
+    # 2.将数据添加到数据库
+    models.Users.objects.create(username=username, password=password, email=email)
+    # 3.返回用户列表页面
+    return redirect("/users/")
