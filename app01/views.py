@@ -48,3 +48,22 @@ def user_add(request):
     models.Users.objects.create(username=username, password=password, email=email)
     # 3.返回用户列表页面
     return redirect("/users/")
+
+
+def user_edit(request, id):
+    """编辑用户"""
+    if request.method == "GET":
+        user = models.Users.objects.get(id=id)
+        return render(request, "user_edit.html", {"user": user})
+    # 1.获取用户提交的数据,并修改数据库
+    user_obj = models.Users.objects.get(id=id)
+    user_obj.username = request.POST.get("username")
+    user_obj.password = request.POST.get("password")
+    user_obj.email = request.POST.get("email")
+    user_obj.save()
+    # 2.重定向到用户列表页面
+    return redirect("/users/")
+
+
+def test(request):
+    return render(request, "test.html")

@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>用户管理</h1>
-<a href="/user_add/">添加用户</a>
+<a href="/user/add/">添加用户</a>
 <table style="border: solid darkblue">
     <thead>
     <tr>
@@ -29,8 +29,8 @@
             <td>{{ user.password }}</td>
             <td>{{ user.email }}</td>
             <td>
-                <a href="/user_edit/?id={{ user.id }}">编辑</a>
-                <a href="/user_delete/?id={{ user.id }}">删除</a>
+                <a href="/user/{{ user.id }}/edit/">编辑</a>
+                <a href="/user/delete/?id={{ user.id }}">删除</a>
             </td>
         </tr>
     {% endfor %}

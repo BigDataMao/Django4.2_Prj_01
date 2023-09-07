@@ -23,6 +23,8 @@ urlpatterns = [
     path("index/", views.index),
     path("news/", views.news),
     path("users/", views.users),
-    path("user_delete/", views.user_delete),
-    path("user_add/", views.user_add),
+    path("user/delete/", views.user_delete),
+    path("user/add/", views.user_add),
+    path("user/<int:id>/edit/", views.user_edit),
+    path("test/", views.test),
 ]
